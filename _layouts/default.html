@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="author" content="Zinan Lin (林梓楠)" /> 
-    <meta name="description" content="Zinan Lin's homepage" /> 
-    <meta name="keywords" content="Zinan Lin,PhD,CMU,Carnegie Mellon University,Tsinghua,Machine Learning,Security,Privacy" /> 
+    <meta name="author" content="Jaskaran Singh" /> 
+    <meta name="description" content="Jaskaran Singh's homepage" /> 
+    <meta name="keywords" content="" /> 
     <link rel="stylesheet" href="{{site.url}}/assets/css/atom-one-light.css">
     {% if page.title %}
         <title>{{ site.name}} | {{page.title }}</title>
@@ -54,8 +54,23 @@
                 {% endfor %}
             </ul>
                 </li>
+                <li><a href="{{site.url}}/" ><img src="{{site.url}}/assets/img/disk.png" />(D:)</a>
+                    <ul>
+                        {% assign collections2 = site.collections | where_exp: "item", "item.label != 'posts'" | sort: "pos"%}
+                        {% for collection in collections2 %}
+                            {% if collection.label == current_collection %}
+                                <li class="hit"><a href="{{site.url}}/{{collection.label}}" title="{{collection.name}}"><img src="{{site.url}}/assets/img/folder.ico" />{{ collection.name }}</a></li>
+                            {% else %}
+                                <li><a href="{{site.url}}/{{collection.label}}" title="{{collection.name}}"><img src="{{site.url}}/assets/img/folder.ico" />{{ collection.name }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                        </li>
+
+
             </ul>
         </div>
+        
         <div class="post_list">
             <ul>
                 {% for post in site[current_collection] %}
