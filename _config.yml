@@ -58,9 +58,17 @@ collections:
         output: true
         name: About
         pos: 100
+#D-drive
+Ddrive:
+    blog:
+        output: true
+        name: Blogs
+        pos: 101
+    video:
+        output: true
+        name: Videography
+        pos: 102
 
-
-    
 defaults:
     -
         scope:
