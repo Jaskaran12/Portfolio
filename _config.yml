@@ -13,7 +13,8 @@ google_verification: null
 
 
 # File management
-include: [".htaccess"]
+include: 
+    [".htaccess"]
 exclude: ["README.md", "LICENSE", "TODO.txt", "Gemfile", "Gemfile.lock"]
 
 # Sass
@@ -54,20 +55,21 @@ collections:
         output: true
         name: Games
         pos: 6
-    about:
-        output: true
-        name: About
-        pos: 100
-#D-drive
-Ddrive:
     blog:
         output: true
         name: Blogs
+        tag: blog
         pos: 101
     video:
         output: true
         name: Videography
+        tag: video
         pos: 102
+    about:
+        output: true
+        name: About
+        pos: 104
+
 
 defaults:
     -
